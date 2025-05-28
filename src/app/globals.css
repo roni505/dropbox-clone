@@ -1,26 +1,22 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+@layer base {
+  * {
+    scrollbar-width: none;
+  }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+  h3 {
+    letter-spacing: -0.02em;
+    text-wrap: balance;
+    font-weight: 700;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@theme {
+  --dropbox-color: #0061fe;
+  --dropbox-btn-size: 90px;
+  --dropbox-left: calc(var(--dropbox-btn-size) / -6);
+  --dropbox-bottom: 50%;
+  --dropbox-transform: translate(calc(50vw - var(--dropbox-btn-size) / 3), 50%);
+  --nav-tile-gap: 10px;
 }
