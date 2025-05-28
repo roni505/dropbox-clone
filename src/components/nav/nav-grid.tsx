@@ -2,7 +2,6 @@
 
 import { easeInOut } from "motion";
 import { motion, useMotionValue, useMotionValueEvent, useScroll, useTransform } from "motion/react";
-import { useLoading } from "@/hooks/useLoading";
 import { LogoGrid } from "../logo/logo-grid";
 import { TypographyGrid } from "../typography/typography-grid";
 import { IconographyGrid } from "../iconography/IconographyGrid";
@@ -13,6 +12,7 @@ import { VoiceToneGrid } from "../voicetone/voice&tone-grid";
 import { cn } from "@/lib/utils";
 import { FrameworkGrid } from "../framework/framework-grid";
 import { HeroGrid } from "../hero/hero-grid";
+import { useLoading } from "@/context/loadingContext";
 
 export function NavGrid() {
   const { scrollYProgress } = useScroll();

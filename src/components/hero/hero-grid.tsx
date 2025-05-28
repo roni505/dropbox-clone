@@ -1,6 +1,6 @@
 'use client'
 
-import { useLoading } from "@/hooks/useLoading";
+import { useLoading } from "@/context/loadingContext";
 import { useScroll, motion, useMotionValueEvent, useMotionValue, useTransform } from "motion/react"
 import { useState } from "react";
 

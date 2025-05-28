@@ -1,7 +1,7 @@
 'use client'
 
+import { useLoading } from "@/context/loadingContext";
 import { useMotionValue, useMotionValueEvent, useScroll, useTransform } from "motion/react"
-import { useLoading } from "./useLoading";
 
 export function useGridScale() {
   const { scrollYProgress } = useScroll();

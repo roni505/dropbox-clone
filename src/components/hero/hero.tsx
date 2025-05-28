@@ -4,8 +4,8 @@ import { useScroll, motion, useMotionValueEvent, useMotionValue, useTransform } 
 import { useState } from "react";
 import ScrollChevron from "./scroll-chevron";
 import DropBoxSvg from "./dropbox-svg";
-import { useLoading } from "@/hooks/useLoading";
 import { HeroText } from "./hero-text";
+import { useLoading } from "@/context/loadingContext";
 
 const initialSize = "calc(-2px + min(800px, -64px + min(100vw, 100vh)))";
 const middleSize = "calc(-2px + min(502px, -64px + min(100vw, 100vh)))";
@@ -70,6 +70,7 @@ export function Hero() {
         className="relative border border-transparent text-(--text-color) flex-none bg-(--dropbox-bg)"
       >
         <div
+          style={{ width: "min(500px, min(100vw, 100vh) - 64px)" }}
           className="pointer-events-none p-5.5 h-full max-w-[500px] flex justify-between items-start"
         >
           <HeroText scrollDirection={scrollDirection} />

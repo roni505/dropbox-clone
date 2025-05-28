@@ -1,8 +1,8 @@
 'use client'
 
+import { useLoading } from "@/context/loadingContext";
 import { useMotionValue, useMotionValueEvent, useScroll, useTransform } from "motion/react"
 import { useState } from "react";
-import { useLoading } from "./useLoading";
 
 export function useAnimationEnd() {
   const [isEnd, setIsEnd] = useState(false);

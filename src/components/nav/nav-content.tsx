@@ -21,5 +21,6 @@ export function NavContent() {
       <Imagery index={6} />
       <Motion index={7} />
     </nav>
-  )
+  );
 }
+

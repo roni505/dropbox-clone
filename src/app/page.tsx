@@ -2,7 +2,7 @@
 
 import { Hero } from "@/components/hero/hero";
 import { Nav } from "@/components/nav/nav";
-import { useLoading } from "@/hooks/useLoading";
+import { useLoading } from "@/context/loadingContext";
 import { animate } from "motion";
 import { useMotionValue, useMotionValueEvent } from "motion/react";
 import { useEffect } from "react";
@@ -21,8 +21,8 @@ export default function Home() {
   });
 
   return (
-    <div className={`h-screen w-full ${loading ? "overflow-hidden" : ""}`}>
-      <div className={`h-[300vh] w-full`}>
+    <div className={`h-screen ${loading ? "overflow-hidden" : ""}`}>
+      <div className={`h-[300vh]`}>
         <Nav />
         <Hero />
       </div>

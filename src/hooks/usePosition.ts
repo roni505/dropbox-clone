@@ -1,9 +1,9 @@
 'use client'
 
-import { useLoading } from '@/hooks/useLoading';
 import { useMotionTemplate, useMotionValue, useMotionValueEvent, useScroll, useTransform } from "motion/react"
 import { useEffect } from "react";
 import { getInitialOffsets } from "../lib/getOffset";
+import { useLoading } from "@/context/loadingContext";
 
 export function usePosition(index: number) {
   const { scrollYProgress } = useScroll();
