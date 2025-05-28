@@ -23,8 +23,8 @@ export default function Home() {
   return (
     <div className={`h-screen w-full ${loading ? "overflow-hidden" : ""}`}>
       <div className={`h-[300vh] w-full`}>
-        <Hero />
         <Nav />
+        <Hero />
       </div>
     </div>
   )
