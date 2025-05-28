@@ -14,7 +14,7 @@ import { useLoading } from "@/context/loadingContext";
 export function usePosition(index: number) {
   const { scrollYProgress } = useScroll();
   const manualScroll = useMotionValue(0);
-  const windowWidth = useMotionValue(1000000);
+  const windowWidth = useMotionValue(100000);
   const { loading } = useLoading();
 
   useMotionValueEvent(scrollYProgress, "change", (curr) => {
@@ -23,14 +23,16 @@ export function usePosition(index: number) {
   });
 
   useEffect(() => {
-    function handleResize() {
-      const dropboxBtnSize = parseFloat(
-        getComputedStyle(document.documentElement).getPropertyValue("--dropbox-btn-size")
-      ) || 90;
+    if (typeof window === "undefined") return;
+
+    const updateWidth = () => {
+      const dropboxBtnSize =
+        parseFloat(getComputedStyle(document.documentElement).getPropertyValue("--dropbox-btn-size")) || 90;
       windowWidth.set(window.innerWidth - dropboxBtnSize);
-    }
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
+    };
+    updateWidth();
+    window.addEventListener("resize", updateWidth);
+    return () => window.removeEventListener("resize", updateWidth);
   }, []);
 
   const initial = getInitialOffsets(index, windowWidth.get());
