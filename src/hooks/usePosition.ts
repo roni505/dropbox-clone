@@ -1,6 +1,12 @@
-'use client'
+'use client';
 
-import { useMotionTemplate, useMotionValue, useMotionValueEvent, useScroll, useTransform } from "motion/react"
+import {
+  useMotionTemplate,
+  useMotionValue,
+  useMotionValueEvent,
+  useScroll,
+  useTransform
+} from "motion/react";
 import { useEffect } from "react";
 import { getInitialOffsets } from "../lib/getOffset";
 import { useLoading } from "@/context/loadingContext";
@@ -8,7 +14,7 @@ import { useLoading } from "@/context/loadingContext";
 export function usePosition(index: number) {
   const { scrollYProgress } = useScroll();
   const manualScroll = useMotionValue(0);
-  const windowWidth = useMotionValue(window.innerWidth);
+  const windowWidth = useMotionValue(1000);
   const { loading } = useLoading();
 
   useMotionValueEvent(scrollYProgress, "change", (curr) => {
@@ -45,6 +51,8 @@ export function usePosition(index: number) {
   const transform = useMotionTemplate`scale(${scaleValue}) translate(${translateXValue}px, ${translateYValue}px)`;
   const intialTransform = useMotionTemplate`scale(2) translate(${initialX.get()}px, ${initialY.get()}px)`;
 
+
   return loading ? intialTransform : transform
 
 }
+

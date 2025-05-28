@@ -21,7 +21,7 @@ export default function Home() {
   });
 
   return (
-    <div className={`h-screen ${loading ? "overflow-hidden" : ""}`}>
+    <div className={`h-[300vh] ${loading ? "overflow-hidden" : ""}`}>
       <div className={`h-[300vh]`}>
         <Nav />
         <Hero />
