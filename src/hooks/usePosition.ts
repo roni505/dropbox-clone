@@ -14,7 +14,7 @@ import { useLoading } from "@/context/loadingContext";
 export function usePosition(index: number) {
   const { scrollYProgress } = useScroll();
   const manualScroll = useMotionValue(0);
-  const windowWidth = useMotionValue(1000);
+  const windowWidth = useMotionValue(1000000);
   const { loading } = useLoading();
 
   useMotionValueEvent(scrollYProgress, "change", (curr) => {
